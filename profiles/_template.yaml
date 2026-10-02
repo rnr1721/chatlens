@@ -1,0 +1,46 @@
+# ChatLens analysis profile — template with every option documented.
+# Copy this file to profiles/<your-name>.yaml and run:  ./chatlens analyze --profile=<your-name>
+# Files starting with "_" are not listed by `./chatlens profiles`.
+
+# Report title. A plain string or a map of translations (en / ru / uk …).
+title:
+  en: Attitude towards cats
+  ru: Отношение к котикам
+
+description: One line shown in `./chatlens profiles`.
+
+# The task for the model. Describe WHAT to evaluate — in any language.
+# The tool appends the category list, the JSON output format and the rules itself,
+# so you don't need to (and shouldn't) describe the output format here.
+# Placeholder: {{chat_name}} — the name of the chat.
+prompt: |
+  You are analysing the Telegram chat «{{chat_name}}».
+  For each user, determine how they feel about cats, based only on their messages.
+
+# Categories, in the order they appear in the report.
+# Keys: snake_case. The model answers with these keys.
+categories:
+  likes:
+    label: { en: Cat people, ru: Любят котиков }
+    description: speaks warmly about cats, shares cat photos, asks about cat care
+    color: "#1a7f37"   # any CSS colour, used in the report
+    icon: "🐈"
+  dislikes:
+    label: { en: Not into cats, ru: Не любят котиков }
+    description: complains about cats, prefers other pets, is annoyed by cat content
+    color: "#b42318"
+    icon: "🙅"
+  unclear:
+    label: { en: Unclear, ru: Непонятно }
+    description: not enough evidence in the messages — off-topic, greetings, too few messages
+    color: "#667085"
+    icon: "❔"
+
+# Category used when the evidence is insufficient or the model returns an unknown key.
+# Shown at the bottom of the report. Defaults to the last category.
+fallback: unclear
+
+limits:
+  reason_words: 20   # max length of the one-sentence explanation
+  quotes: 2          # max quotes per user (0 to disable)
+  quote_words: 15    # max words per quote

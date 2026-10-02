@@ -1,0 +1,34 @@
+title:
+  en: Attitude towards cats
+  ru: Отношение к котикам
+  uk: Ставлення до котиків
+
+description: Who in the chat is a cat person (an example of a non-marketing profile)
+
+prompt: |
+  You are analysing the Telegram chat «{{chat_name}}».
+  For each user, determine how they feel about cats.
+
+categories:
+  likes:
+    label: { en: Cat people, ru: Любят котиков, uk: Люблять котиків }
+    description: speaks warmly about cats, shares cat photos or stories, asks about cat care
+    color: "#1a7f37"
+    icon: "🐈"
+  neutral:
+    label: { en: Neutral, ru: Нейтрально, uk: Нейтрально }
+    description: mentions cats without a clear emotional attitude
+    color: "#b54708"
+    icon: "😐"
+  dislikes:
+    label: { en: Not into cats, ru: Не любят котиков, uk: Не люблять котиків }
+    description: complains about cats, prefers other pets, is annoyed by cat content
+    color: "#b42318"
+    icon: "🙅"
+  unclear:
+    label: { en: Unclear, ru: Непонятно, uk: Незрозуміло }
+    description: no cat-related messages or too little evidence
+    color: "#667085"
+    icon: "❔"
+
+fallback: unclear

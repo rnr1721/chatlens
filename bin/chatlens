@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use ChatLens\Console\AnalyzeCommand;
+use ChatLens\Console\ExportIdsCommand;
+use ChatLens\Console\ListProfilesCommand;
+use ChatLens\Kernel;
+use Symfony\Component\Console\Application;
+
+$root = dirname(__DIR__);
+
+if (!is_file($root . '/vendor/autoload.php')) {
+    fwrite(STDERR, "Dependencies are not installed. Run: composer install\n");
+    exit(1);
+}
+
+require $root . '/vendor/autoload.php';
+
+$kernel = new Kernel($root);
+
+$app = new Application('ChatLens', '1.0.0');
+$app->addCommands([
+    new AnalyzeCommand($kernel),
+    new ExportIdsCommand($kernel),
+    new ListProfilesCommand($kernel),
+]);
+
+$app->run();

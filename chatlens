@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * Shortcut so the tool can be run from the project root, like Laravel's artisan:
+ *
+ *   ./chatlens analyze          (Linux / macOS)
+ *   php chatlens analyze        (anywhere, incl. Windows)
+ *
+ * The real entry point is bin/chatlens (also exposed via Composer's "bin").
+ */
+
+require __DIR__ . '/bin/chatlens';

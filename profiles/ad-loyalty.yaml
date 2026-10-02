@@ -1,0 +1,38 @@
+title:
+  en: Who is loyal to ads in the chat
+  ru: Кто в чате лоялен к рекламе
+  uk: Хто в чаті лояльний до реклами
+
+description: Attitude towards advertising, paid services and commercial posts
+
+prompt: |
+  You are analysing the Telegram chat «{{chat_name}}».
+  Determine each user's attitude towards ADVERTISING in this chat: ads, paid services,
+  promotional and commercial posts, spam.
+
+categories:
+  loyal:
+    label: { en: Loyal, ru: Лояльные, uk: Лояльні }
+    description: >-
+      posts ads or offers services themselves, responds to announcements, asks about products,
+      or reacts neutrally or kindly to commercial posts
+    color: "#1a7f37"
+    icon: "✅"
+  not_loyal:
+    label: { en: Not loyal, ru: Нелояльные, uk: Нелояльні }
+    description: >-
+      complains about ads, demands bans or deletion, insults spammers, argues with advertisers
+    color: "#b42318"
+    icon: "🚫"
+  unclear:
+    label: { en: Unclear, ru: Непонятно, uk: Незрозуміло }
+    description: impossible to tell from the messages — too little data, off-topic, only greetings
+    color: "#667085"
+    icon: "❔"
+
+fallback: unclear
+
+limits:
+  reason_words: 20
+  quotes: 2
+  quote_words: 15

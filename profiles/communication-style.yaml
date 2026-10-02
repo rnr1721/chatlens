@@ -1,0 +1,35 @@
+title:
+  en: Communication style
+  ru: Стиль общения
+  uk: Стиль спілкування
+
+description: Constructive, neutral or toxic participants — useful for moderators
+
+prompt: |
+  You are helping the moderators of the Telegram chat «{{chat_name}}».
+  Assess each user's typical communication style towards other participants.
+  Judge behaviour, not opinions: strong disagreement expressed politely is not toxic.
+
+categories:
+  constructive:
+    label: { en: Constructive, ru: Конструктивные, uk: Конструктивні }
+    description: helps others, answers questions, disagrees politely, keeps discussions on track
+    color: "#1a7f37"
+    icon: "🤝"
+  neutral:
+    label: { en: Neutral, ru: Нейтральные, uk: Нейтральні }
+    description: ordinary participation without notable helpfulness or hostility
+    color: "#475467"
+    icon: "💬"
+  toxic:
+    label: { en: Toxic, ru: Токсичные, uk: Токсичні }
+    description: insults, harasses or mocks people, provokes conflicts, uses hate speech
+    color: "#b42318"
+    icon: "⚠️"
+  unclear:
+    label: { en: Unclear, ru: Непонятно, uk: Незрозуміло }
+    description: too few messages to judge
+    color: "#98a2b3"
+    icon: "❔"
+
+fallback: unclear

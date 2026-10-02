@@ -1,0 +1,43 @@
+{
+    "name": "rnr1721/chatlens",
+    "description": "LLM-powered classifier of Telegram chat participants by any criterion you describe in a prompt",
+    "type": "project",
+    "license": "MIT",
+    "keywords": ["telegram", "llm", "classification", "deepseek", "claude", "openai", "cli"],
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "halaxa/json-machine": "^1.2",
+        "psr/log": "^3.0",
+        "symfony/console": "^7.0",
+        "symfony/dotenv": "^7.0",
+        "symfony/yaml": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChatLens\\": "src/"
+        },
+        "files": [
+            "src/Support/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChatLens\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/chatlens"
+    ],
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

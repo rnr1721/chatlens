@@ -1,0 +1,23 @@
+# Dependencies
+/vendor/
+
+# Everything the tool reads and writes about real chats: exports, id lists,
+# cached model answers and reports contain personal data of chat members.
+/data/*/*
+!/data/*/.gitkeep
+
+# Secrets
+.env
+
+# Tooling
+.phpunit.cache/
+.php-cs-fixer.cache
+.idea/
+.vscode/
+
+# Profiles
+/profiles/*
+!/profiles/_template.yaml
+!/profiles/ad-loyalty.yaml
+!/profiles/cats.yaml
+!/profiles/communication-style.yaml
